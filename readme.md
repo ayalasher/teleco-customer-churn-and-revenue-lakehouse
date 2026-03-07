@@ -167,10 +167,14 @@ The trained model provides churn predictions that can help telecom companies:
 teleco-churn-lakehouse
 │
 ├── notebooks/
-│   ├── 01_data_ingestion
-│   ├── 02_data_transformation
-│   ├── 03_feature_engineering
-│   └── 04_ml_model
+│   ├── 01_bronze
+│   ├── 02_silver
+│   ├── 03_gold
+│   ├── 04_feature_engineering
+│   ├── 05_model_training
+│   ├── 06_model_evaluation
+│   ├── 07_serving predictions
+│   └── 08_ml_flow_tracking
 │
 ├── data/
 │   └── sample_dataset
