@@ -224,7 +224,3 @@ Maxwel Ayal
 Data Engineer | Python | SQL | Spark | ETL Pipelines
 
 ---
-
-# GitHub Repository About Section
-
-End-to-end Telecom Customer Churn Lakehouse project built on Databricks using the Medallion Architecture (Bronze, Silver, Gold). The project includes data ingestion, transformation with PySpark, feature engineering, and a machine learning model to predict customer churn.
