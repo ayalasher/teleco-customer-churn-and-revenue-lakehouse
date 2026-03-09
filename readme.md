@@ -48,7 +48,7 @@ Raw Data → Bronze Tables → Silver Transformations → Gold Feature Tables �
 
 * PySpark
 * Pandas
-* Scikit-learn
+* pyspark mlLib
 
 **Data Engineering Tools**
 
@@ -83,12 +83,12 @@ Raw telecom data is ingested into Delta tables without modification.
 Key tasks:
 
 * Load CSV dataset
-* Store raw data in Delta format
+* Store raw data in Delta format in the bronze layer
 * Maintain schema consistency
 
 Output:
 
-* `bronze_customers`
+* `teleco_customer_churn`
 
 ---
 
@@ -105,7 +105,7 @@ Key tasks:
 
 Output:
 
-* `silver_customers_clean`
+* `teleco_customer_churn`
 
 ---
 
@@ -121,7 +121,7 @@ Key tasks:
 
 Output:
 
-* `gold_churn_features`
+* `customer_churn_features`
 
 ---
 
@@ -134,6 +134,7 @@ Predict whether a telecom customer will churn.
 ## Model Used
 
 Logistic Regression
+Random Forest
 
 ## Steps
 
@@ -179,6 +180,12 @@ teleco-churn-lakehouse
 ├── data/
 │   └── sample_dataset
 │
+├── media/
+│   ├── dashboards.png
+│   ├── job runs.png
+│   ├── Telco_churn_catalogue_layout.jpg
+│   ├── teleco_churn_analytics_and_ML_lakehouse_architetcture.jpg
+│
 ├── README.md
 └── requirements.txt
 ```
@@ -191,10 +198,13 @@ teleco-churn-lakehouse
 2. Upload the dataset to DBFS
 3. Run the notebooks in order:
 
-* Data Ingestion
-* Data Transformation
-* Feature Engineering
-* ML Modeling
+* Bronze layer notebooks(ddl ➡ data_loading)
+* Silver layer notebooks(ddl ➡ data_transformations)
+* Gold layer notebooks(ddl ➡ gold_work)
+* Feature engineering
+* Model training
+* Serving predictions
+* ml_flow_tracking
 
 ---
 
@@ -212,8 +222,7 @@ teleco-churn-lakehouse
 
 # Future Improvements
 
-* Deploy model as an API
-* Add real-time streaming data ingestion
+* Deploy model as an API that will give out a possibility of churning when fed with the required data about a customer.
 
 ---
 
