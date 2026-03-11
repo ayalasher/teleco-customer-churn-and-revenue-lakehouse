@@ -173,9 +173,7 @@ teleco-churn-lakehouse
 │   ├── 03_gold
 │   ├── 04_feature_engineering
 │   ├── 05_model_training
-│   ├── 06_model_evaluation
-│   ├── 07_serving predictions
-│   └── 08_ml_flow_tracking
+│   └── 06_generate_predictions
 │
 ├── data/
 │   └── sample_dataset
